@@ -1,7 +1,15 @@
-We used 10X Chromium linked-read sequencing approach and generated Illumina paired-end reads. The reads were assembled using Supernova (https://support.10xgenomics.com/de-novo-assembly/software/pipelines/latest/using/running) version 2.1.1 to generate the draft genome assembly using the following script,
+## We used 10X Chromium linked-read sequencing approach and generated Illumina paired-end reads. The reads were assembled using Supernova (https://support.10xgenomics.com/de-novo-assembly/software/pipelines/latest/using/running) version 2.1.1 to generate the draft genome assembly using the following script,
 
-##
+## generate a whole genome de novo assembly 
 
 supernova run --id=Philornis_downsi1 --fastqs=/permananent_storage/Illumina/PHL/10X_data/usftp1.novogene.com/H202SC19112283/Rawdata/PB_FUL_20 --accept-extreme-coverage --maxreads='all'
+
+## generate FASTA output for the assembly
+
+supernova mkoutput --asmdir=/PHL/Philornis_downsi1/outs/assembly --outprefix=Philornis_downsi1_v1 --style=pseudohap --minsize=1000
+
+## Check genome completeness using BUSCO (https://busco.ezlab.org/) by comparing against diptera BUSCO genes (https://busco-data.ezlab.org/v4/data/lineages/)
+
+busco -i Philornis_downsi1_v1.fasta -c 20 -m geno -l diptera_odb10 -f --out Busco_Philornis_downsi1_v1
 
 
