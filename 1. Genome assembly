@@ -1,1 +1,7 @@
+We used 10X Chromium linked-read sequencing approach and generated Illumina paired-end reads. The reads were assembled using Supernova (https://support.10xgenomics.com/de-novo-assembly/software/pipelines/latest/using/running) version 2.1.1 to generate the draft genome assembly using the following script,
+
+##
+
+supernova run --id=Philornis_downsi1 --fastqs=/permananent_storage/Illumina/PHL/10X_data/usftp1.novogene.com/H202SC19112283/Rawdata/PB_FUL_20 --accept-extreme-coverage --maxreads='all'
+
 
