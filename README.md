@@ -1,1 +1,1 @@
-# Philornis
+(Disclaimer: We welcome anyone to re-use these materials. But, please note that the codes/software environment we are sharing here are specific to this project that were run in the Kent State University computer cluster
