@@ -1,4 +1,16 @@
 We used tool Orthofinder (https://github.com/davidemms/OrthoFinder) for phylogenetic orthology inference and carry out comparative genomics analysis of P. downsi with other published dipteran genomes.
 
 1. Copy protein fasta file generated from P. downsi genome annotation pipeline into a separate folder "Proteomes"
-2. Download protein fasta files from other dipteran genomes from Ensembl into the same "Proteome" folder 
+2. Download protein fasta files from other dipteran genomes from Ensembl|Metazoa (https://metazoa.ensembl.org/index.html) into the same "Proteome" folder
+3. Run Orthofinder
+
+/Tools/OrthoFinder-2.2.3/orthofinder -f Proteomes -t 32
+
+4. Thev Orthofinder output,
+
+- infers the orthogroups among all species
+- infers a complete set of rooted gene trees
+- infers a rooted species tree
+- infers all orthology relationships between the genes using the gene trees
+- infers gene duplication events and cross references them to the corresponding nodes on the gene and species trees
+- provides comparative genomics statistics among all species
