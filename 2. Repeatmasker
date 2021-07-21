@@ -1,1 +1,21 @@
+## Identify transposable elements in Philornis downsi genome
+
+1. Build custom repeat library database
+
+/Tools/RepeatMasker/RepeatModeler-2.0.1/BuildDatabase -name Philornis_downsi1_v1.repeat_modeler -engine rmblast -batch batch.file
+/Tools/RepeatMasker/RepeatModeler-2.0.1/RepeatModeler -database Philornis_downsi1_v1.repeat_modeler -engine rmblast -pa 5
+
+2. Download current release of repeat library from repbase database (https://www.girinst.org/server/RepBase/)
+
+3. Combine Repbase and custom generated repeat libraries
+
+cat /Tools/RepeatMasker/Libraries/RepeatMaskerLib.fasta Philornis_downsi1_v1.repeat_modeler-families.fa > combined_repeat_libs.fasta
+
+4. Run Repatmasker
+
+mkdir Rmasker
+/Tools/RepeatMasker/RepeatMasker -pa 5 -s -lib combined_repeat_libs.fasta -dir RMasker -e rmblast Philornis_downsi1_v1.fasta
+
+
+## Use similar approach as above to identify transposable elements in other species
 
