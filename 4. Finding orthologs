@@ -1,1 +1,4 @@
+We used tool Orthofinder (https://github.com/davidemms/OrthoFinder) for phylogenetic orthology inference and carry out comparative genomics analysis of P. downsi with other published dipteran genomes.
 
+1. Copy protein fasta file generated from P. downsi genome annotation pipeline into a separate folder "Proteomes"
+2. Download protein fasta files from other dipteran genomes from Ensembl into the same "Proteome" folder 
