@@ -1,0 +1,19 @@
+We used CAFE (https://github.com/hahnlab/CAFE) to analyze changes in gene family size in a way that accounts for phylogenetic history and provides a statistical foundation for evolutionary inferences
+
+1. Generate matrix of gene counts for each orthologs among all species analyzed, and select orthologs that have at least one gene identified in each species. This table was imported from previous Orthofinder output.
+2. Get a newick formatted phylogenetic tree, including branch lengths. This tree was also imported from previous Orthofinder output.
+3. Run CAFE
+
+#!cafe
+
+load -i filtered_cafe_input.atleastonegene.txt  -t 4 -l log3.txt 
+
+tree (Heliconius.longest.id:0.6266110071,((Drosophila.longest.id:0.33303251,((Glossina.longest.id:0.2563663333,(Philornia.longest.id:0.18422065,(Musca.longest.id:0.138356,Stomoxys.longest.id:0.138356)N6:0.04586465)N5:0.07214568333)N4:0.03222311667,Ceratitis.longest.id:0.28858945)N3:0.04444306)N2:0.1401010817,Aedes.longest.id:0.4731335917)N1:0.1534774155)N0 
+
+lambda -s -t (1,((1,((1,(1,(1,1)1)1)1,1)1)1,1)1)
+
+report report.run1.txt.cafe
+
+
+
+
